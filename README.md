@@ -48,14 +48,18 @@
    chmod +x cm
    
    4.4. Запускаем Selenoid и Selenoid UI
+   
    для загрузки изображений с сервера VNC (чтобы увидеть экран браузера в реальном времени) используется --vnc флаг
+   
    /cm selenoid start --vnc
+   
    /cm selenoid-ui start
    
    Selenoid http://localhost:4444/
    Selenoid UI http://localhost:8080/
    
 5. Клонируем репозиторий с тестами https://github.com/timestampx/eapteka
+   
    git clone https://github.com/timestampx/eapteka.git
    
 6. В каталоге с тестами выполнить
