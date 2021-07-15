@@ -41,10 +41,12 @@
    4.1. Докер должен быть установлен
    
    4.2. Скачать менеджер конфигурации для автоматической настройки Selenoid
+   
    https://github.com/aerokube/cm/releases/tag/1.8.1
    либо скачать последний релиз по ссылке: https://aerokube.com/cm/latest/
    
    4.3. Меняем права доступа к файлу менеджера конфигурации
+   
    chmod +x cm
    
    4.4. Запускаем Selenoid и Selenoid UI
@@ -56,6 +58,7 @@
    /cm selenoid-ui start
    
    Selenoid http://localhost:4444/
+   
    Selenoid UI http://localhost:8080/
    
 5. Клонируем репозиторий с тестами https://github.com/timestampx/eapteka
@@ -63,6 +66,7 @@
    git clone https://github.com/timestampx/eapteka.git
    
 6. В каталоге с тестами выполнить
+   
    npm install
    для загрузки node_modules
 
@@ -70,10 +74,12 @@
    npx wdio run ./wdio.conf.js
 
 8. Allure - для генерации и просмотра результатов тестирования.
+   
    Установите инструмент командной строки, инструкция:
    https://www.npmjs.com/package/allure-commandline
    
    Продублирую:
+   
    8.1. Установить Java https://www.java.com/ru/download/help/mac_install.html
    
    8.2. Выполните команду, которая сгенерирует отчет и откроет его в браузере
