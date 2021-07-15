@@ -6,7 +6,6 @@ const item = 'Фенибут';
 
 describe('Open product with recipe', () => {
     it('Card should be open with true product name', async () => {
-
         // Open eapteka.ru
         await MainPage.open();
         await expect(browser).toHaveTitle(MainPage.title);
@@ -20,13 +19,15 @@ describe('Open product with recipe', () => {
         // Wait search result
         await expect(SearchPage.searchCount).toBeExisting();
         await expect(SearchPage.searchCount).toHaveTextContaining(item);
-        // let itemTitle = SearchPage.getItemDataName(SearchPage.itemFirstWithRecipe);
+
+        const title = await SearchPage.itemFirstWithRecipe;
+        const titleText = await SearchPage.getItemText(title);
 
         // Open first item marked 'with recipe'
-        await SearchPage.openItemCard(SearchPage.itemFirstWithRecipe);
+        await SearchPage.openItemCard(title);
 
         // Item title in card should be present
         await expect(ProductCard.productName).toHaveTextContaining(item);
-        // await expect(ProductCard.productName).toHaveTextContaining(itemTitle);
+        await expect(ProductCard.productName).toHaveTextContaining(titleText);
     });
 });

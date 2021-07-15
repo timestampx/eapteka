@@ -10,12 +10,8 @@ class SearchPage extends Page {
         await (await item).click();
     }
 
-    async getItemDataName (item) {
-        // await (await item).getAttribute('data-name');
-        const form = $('[data-ga-offer*="PKU"]:nth-of-type(1) .cc-item--title')
-        const attr = form.getText();
-        console.log('!!!!!!!!!!' + attr);
-        { return attr };
+    async getItemText (item) {
+        return await item.getText();
     }
 }
 

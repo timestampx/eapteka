@@ -18,7 +18,7 @@
 1. Подключен Allure отчет и добавлена информация по работе с ним в readme.md. 
 2. Есть возможность запуска теста в десктоп режиме браузера и в режиме мобильной эмуляции, управление через флаг или переменную окружения в команде запуска (допустимо через useragent, без appium’а).
 
-ИНСТРУКЦИЯ:
+<b>ИНСТРУКЦИЯ:<b>
 В первую очередь установите ПО необходимое для копирования и запуска тестов
 1. Git - для клонирования репозитория с тестами
    Скачать и установить можно по ссылке
@@ -32,9 +32,10 @@
    https://www.docker.com/get-started
    рекомендации по настройке
    
-4. Selenoid - ПО для запуска браузеров в Докере.
+4. Selenoid - ПО для запуска браузеров в Докере. 
    Подробная инструкция по установке, настройке и запуску: https://aerokube.com/selenoid/latest/
    
+   Основное:
    4.1. Докер должен быть установлен
    4.2. Скачать менеджер конфигурации для автоматической настройки Selenoid
    https://github.com/aerokube/cm/releases/tag/1.8.1
@@ -46,6 +47,9 @@
    /cm selenoid start --vnc
    /cm selenoid-ui start
    
+   Selenoid http://localhost:4444/
+   Selenoid UI http://localhost:8080/
+   
 5. Клонируем репозиторий с тестами https://github.com/timestampx/eapteka
    git clone https://github.com/timestampx/eapteka.git
    
@@ -56,4 +60,15 @@
 7. Запустить все тесты проекта командой
    npx wdio run ./wdio.conf.js
 
-8. Allure
+8. Allure - для генерации и просмотра результатов тестирования.
+   Установите инструмент командной строки, инструкция:
+   https://www.npmjs.com/package/allure-commandline
+   
+   Продублирую:
+   8.1. Установить Java https://www.java.com/ru/download/help/mac_install.html
+   8.2. Выполните команду, которая сгенерирует отчет и откроет его в браузере
+   npm install -g allure-commandline --save-dev
+   в последствии генерировать отчет можно командой
+   allure generate [allure_output_dir] && allure open
+   Настроить под свои нужды отчет можно с помощью методов и апи, подробнее по ссылке:
+   https://webdriver.io/docs/allure-reporter/
