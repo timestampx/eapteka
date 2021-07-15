@@ -73,8 +73,11 @@
    8.1. Установить Java https://www.java.com/ru/download/help/mac_install.html
    
    8.2. Выполните команду, которая сгенерирует отчет и откроет его в браузере
+   
    npm install -g allure-commandline --save-dev
+   
    в последствии генерировать отчет можно командой
    allure generate [allure_output_dir] && allure open
+   
    Настроить под свои нужды отчет можно с помощью методов и апи, подробнее по ссылке:
    https://webdriver.io/docs/allure-reporter/
